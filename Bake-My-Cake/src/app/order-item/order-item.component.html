@@ -1,0 +1,86 @@
+<div class="container">
+<form [formGroup]="orderForm" (ngSubmit)="onSubmit(orderForm)" >   
+  <div>
+      <h1>Order Form !!</h1>
+  </div>
+  <div class="head">
+    <h3>Fill Your Details to Place Order!!</h3>
+  </div>
+  <mat-form-field class="name">
+      <input matInput formControlName="customerName" placeholder="Enter Name">
+       <mat-error *ngIf="name?.errors?.['required']">Name is required</mat-error>
+      <mat-error *ngIf="name?.errors?.['minlength']">Name should have minimum 3 characters</mat-error> 
+  </mat-form-field>
+
+  <mat-form-field class="email">
+      <input matInput formControlName="email" placeholder="Enter Email">
+       <mat-error *ngIf="email?.errors?.['required']">Email is required</mat-error>
+      <mat-error *ngIf="email?.errors?.['email']">Invalid Email</mat-error> 
+  </mat-form-field>
+
+  <mat-form-field class="phone">
+      <input matInput formControlName="phone" placeholder="Enter Phone Number">
+      <mat-error *ngIf="phone?.errors?.['required']">Phone is required</mat-error>
+      <mat-error *ngIf="phone?.errors?.['pattern']">Invalid Phone number</mat-error> 
+  </mat-form-field>
+
+  <mat-hint>Current Date :</mat-hint>
+<mat-form-field class="currentdate">
+  <input matInput formControlName="orderDate" [value]="getCurrentDate()" [disabled]="true">
+</mat-form-field>
+
+  <mat-hint class="address">Address :</mat-hint>
+  <div formGroupName="address">
+      <mat-form-field class="houseNo">
+          <input matInput type="text" formControlName="houseNo" placeholder="Enter House Number">
+          <mat-error *ngIf="houseNo?.errors?.['required']">House Number is required</mat-error> 
+      </mat-form-field>      
+
+      
+      <mat-form-field class="streetName">
+        <input matInput type="text" formControlName="streetName" placeholder=" Enter Street Name">
+        <mat-error *ngIf="streetName?.errors?.['required']">Street Name is required</mat-error>
+    </mat-form-field>
+
+      <mat-form-field class="zipCode">
+          <input matInput type="text" formControlName="zipCode" placeholder=" Enter ZIP CODE">
+          <mat-error *ngIf="zipCode?.errors?.['required']">Zip Code is required</mat-error>
+          <mat-error *ngIf="zipCode?.errors?.['pattern']">Invalid Zip Code</mat-error>
+      </mat-form-field>
+  </div>
+
+  <mat-form-field appearance="fill" class="itemName">
+    <mat-label>Item Name</mat-label>
+    <input matInput type="text" formControlName="name" [(ngModel)]="items.name" readonly>
+</mat-form-field>
+
+<mat-form-field appearance="fill" class="price">
+    <mat-label>Price</mat-label>
+    <input matInput type="number" formControlName="price" [value]="items.price" readonly>
+  </mat-form-field>
+
+  <button class="submit" mat-raised-button color="primary" [disabled]="orderForm.invalid">Place Order</button>
+  </form>
+</div>
+
+
+<div class="cont">
+  <mat-card class="card">
+  <mat-card-header class="header">
+      <mat-card-title>{{items.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+      <img mat-card-image src="../../assets/images/{{items.name}}.jpg"height="200" width="250" style="border-radius: 15px;">
+  </mat-card-content>
+  <mat-card-footer>
+      {{items.description}}<br>
+     
+      <pre>
+Price:&#x20B9;{{items.price}}  Weight:{{items.quantity}} gm
+
+ Rating : {{items.rating}}/5 <img src="../../assets/logos/rating.jpg">
+
+      </pre>
+  </mat-card-footer>
+  </mat-card>
+</div>

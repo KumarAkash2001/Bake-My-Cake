@@ -1,0 +1,18 @@
+
+
+img{
+    height: 30px;
+    width: 30px;
+    margin-left: 30px;
+}
+.footer{
+    margin-top: 40px;
+    width: 100%;
+    background-color: black;
+    color: red;
+    display: inline-flex;
+    padding-top:10px ;
+}
+.right{
+    margin-left: 800px;
+}

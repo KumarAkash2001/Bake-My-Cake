@@ -1,0 +1,21 @@
+<div class="container">
+    <mat-card class="card">
+    <mat-card-header class="header">
+        <mat-card-title>{{item?.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <img mat-card-image src="../../assets/images/{{item?.name}}.jpg"height="200" width="250" style="border-radius: 15px;">
+    </mat-card-content>
+    <mat-card-footer>
+        {{item?.description}}<br>
+       
+        <pre>
+  Price:&#x20B9;{{item?.price}}  Weight:{{item?.quantity}} gm
+
+   Rating : {{item?.rating}}/5 <img src="../../assets/logos/rating.jpg">
+ 
+<button routerLink="/Orders/{{item?.id}}" (click)="orderPage" mat-stroked-button class="signin-button" color="primary">Order Now</button>
+        </pre>
+    </mat-card-footer>
+    </mat-card>
+</div>

@@ -1,0 +1,13 @@
+<app-search-panel (searchTextChanged)="onSearchItem($event)"></app-search-panel>
+<div id="container">
+    <mat-chip-listbox  aria-label="Category Selection" #chip (click)="filterItems(chip.value)">
+        <mat-chip-option id="mat-chip" value="" color="accent" selected>ALL</mat-chip-option>
+        <mat-chip-option id="mat-chip" value="cake" color="accent">CAKES</mat-chip-option>
+        <mat-chip-option id="mat-chip" value="cookie" color="accent">COOKIES</mat-chip-option>
+        <mat-chip-option id="mat-chip" value="brownie" color="accent">BROWNIES</mat-chip-option>
+      </mat-chip-listbox>
+</div>
+<app-item-list *ngFor="let item of items" [item]="item"></app-item-list>
+<app-footer></app-footer>
+
+

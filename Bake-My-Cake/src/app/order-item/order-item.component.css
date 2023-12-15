@@ -1,0 +1,51 @@
+ .container{
+    border: red 2px solid;
+    margin: 30px;
+    width: 500px;
+    padding: 10px;
+    color: red;
+    display: inline-flex;
+    margin-left: 150px;
+} 
+
+.card{
+    width: 300px;
+    height: auto;
+    border: 2px solid red;
+    justify-content: center;
+    border-radius: 10px;
+    margin-top: 45px;
+    margin-left: 60px;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+.signin-button{
+border-radius: 5px;
+border: 2px solid red;
+cursor:pointer;
+color: white;
+padding: 5px;
+}
+.signin-button:hover{
+box-shadow: 0 1px 1px 1px rgb(252, 0, 0);
+}
+.cont{
+    display: inline-flex;
+}
+.phone{
+    width: 100%;
+}
+.email,.streetName,.quantity{
+    margin-left: 73px;
+}
+.currentdate,.itemName{
+width: 100%;
+}
+.submit{
+    border: red 2px solid;
+    color: red;
+    cursor: pointer;  
+    margin-left: 60px;
+}

@@ -1,0 +1,11 @@
+<!-- <div class>
+    <p>click <a routerLink="/Home"><mat-icon>home</mat-icon>Home</a> if you are not user</p>
+</div> -->
+<div>
+    <form>
+        <h1> User Login</h1>
+        <input type="text" [(ngModel)]="loginId" placeholder="Enter Name" required [ngModelOptions]="{ standalone: true }">
+        <input type="password" [(ngModel)]="loginPassword" placeholder=" Enter Password" required [ngModelOptions]="{ standalone: true }">
+        <button type="submit" (click)="validateLogin()">Login</button>
+    </form>
+</div>
